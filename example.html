@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Website</title>
+      <style>
+         * {
+            width: 100%;
+            height: 100%;3
+            padding: 0; margin: 0;
+         }
+         body {
+
+         }
+         #canvas {
+            position: absolute;
+            top: 0; left: 0;
+            z-index: 1;
+         }
+         div {
+            position: absolute;
+            top: 0; left: 0;
+         }
+      </style>
+   </head>
+      <canvas id="canvas"></canvas>
+      <div id="altBG"></div>
+
+      <script src="triangles.js"></script>
+      <script>
+      var canvas = document.getElementById("canvas");
+      var altBG = document.getElementById("altBG");
+      var triangle = new TriangleBG({
+         canvas : canvas,
+         alternateElem : altBG,
+         cellHeight : 120,
+         cellWidth : 100,
+         mouseLight : true,
+         mouseLightRadius : 500,
+         mouseLightIncrement : 10,
+         resizeAdjustment : true,
+         variance : 1.3,
+         pattern : "x*y",
+         baseColor1 : {
+            baseHue : 120,
+            baseSaturation : 60,
+            baseLightness : 38
+         },
+         baseColor2 : {
+            baseHue : 120,
+            baseSaturation : 60,
+            baseLightness : 40
+         },
+         colorDelta : {
+            hue : 1,
+            lightness : 0,
+            saturation : 0
+         }
+       });
+      </script>
+   </body>
+</html>
